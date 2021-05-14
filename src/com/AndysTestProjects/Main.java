@@ -21,6 +21,7 @@ public class Main {
         //System.out.println(deck.cards[0]);
         do {
             while (gotRight = true) {
+                c = "";
                 r = (int) (Math.random() * (deck.cards.length));
                 System.out.println(prev);
                 System.out.print("Higher or Lower? (H/L): ");
@@ -49,10 +50,23 @@ public class Main {
                             gotRight = true;
                             score++;
                             System.out.println("Nice!\r\nScore: " + score + "\r\n");
+
                         } else {
                             gotRight = false;
                             score = 0;
                             System.out.println("\r\nToo Bad!\r\n");
+                            while (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
+                                System.out.print("Try again? (Y/N): ");
+                                c = console.next();
+                            if (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
+                            System.out.println("Enter Y or N!");
+                            c = "";
+                            } else if (c.equalsIgnoreCase("N")) {
+                                c = "N";
+                            } else {
+                                c = "Y";
+                            }
+                            }
                         }
                     } prev = deck.cards[r];
                 }
