@@ -20,12 +20,12 @@ public class Main {
             System.out.println(play);
             System.out.print("Higher or Lower? (H/L): ");
             String input = console.next();
-            r = (int) (Math.random() * (deck.cards.length));
-            System.out.println("Drawn: " + deck.cards[r]);
             if (!input.equalsIgnoreCase("H") && !input.equalsIgnoreCase("L")) {
                 System.out.println("Booo game over, do as I say.");
-                c = "Y";
+                c = "";
             } else {
+                r = (int) (Math.random() * (deck.cards.length));
+                System.out.println("Drawn: " + deck.cards[r]);
                 int value = deck.cards[r].higherOrLower(play);
                 if (input.equalsIgnoreCase("H")) {
                     System.out.println("You guessed: Higher");
