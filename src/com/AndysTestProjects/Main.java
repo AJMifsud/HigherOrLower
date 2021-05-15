@@ -14,9 +14,9 @@ public class Main {
         System.out.println("Press any key to shuffle");
         System.in.read();
         deck.shuffle();
+        int r = (int) (Math.random() * (deck.cards.length));
+        Card play = deck.cards[r];
         while (c.equalsIgnoreCase("Y")) {
-            int r = (int) (Math.random() * (deck.cards.length));
-            Card play = deck.cards[r];
             System.out.println(play);
             System.out.print("Higher or Lower? (H/L): ");
             String input = console.next();
@@ -24,6 +24,16 @@ public class Main {
             if (!input.equalsIgnoreCase("H") && !input.equalsIgnoreCase("L")) {
                 System.out.println("Booo game over, do as I say.");
                 c = "";
+                score = 0;
+                while (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
+                    //Loop until input is Y or N
+                    System.out.print("Try again? (Y/N): ");
+                    c = console.next();
+                    if (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
+                        System.out.println("Enter Y or N!");
+                        c = "";
+                    }
+                }
             } else {
                 //Draw a new card
                 r = (int) (Math.random() * (deck.cards.length));
@@ -41,6 +51,7 @@ public class Main {
                         //If wrong
                         c = "";
                         score = 0;
+                        r = (int) (Math.random() * (deck.cards.length));
                         System.out.println("\r\nToo Bad!\r\n");
                         while (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
                             //Loop until input is Y or N
@@ -60,11 +71,11 @@ public class Main {
                         c = "Y";
                         score++;
                         System.out.println("Nice!\r\nScore: " + score + "\r\n");
-                        play = deck.cards[r];
                     } else {
                         //If wrong
                         c = "";
                         score = 0;
+                        r = (int) (Math.random() * (deck.cards.length));
                         System.out.println("\r\nToo Bad!\r\n");
                         while (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
                             //Loop until input is Y or N
