@@ -36,9 +36,17 @@ public class Main {
                             score++;
                             System.out.println("Nice!\r\nScore: " + score + "\r\n");
                         } else {
-                            c = "N";
+                            c = "";
                             score = 0;
                             System.out.println("\r\nToo Bad!\r\n");
+                            while (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
+                                System.out.print("Try again? (Y/N): ");
+                                c = console.next();
+                                if (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
+                                    System.out.println("Enter Y or N!");
+                                    c = "";
+                                }
+                            }
                         }
                         prev = deck.cards[r];
                     } else if (input.equalsIgnoreCase("L")) {
