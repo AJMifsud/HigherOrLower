@@ -14,9 +14,9 @@ public class Main {
         System.out.println("Press any key to shuffle");
         System.in.read();
         deck.shuffle();
-        int r = (int) (Math.random() * (deck.cards.length));
-        Card play = deck.cards[r];
         while (c.equalsIgnoreCase("Y")) {
+            int r = (int) (Math.random() * (deck.cards.length));
+            Card play = deck.cards[r];
             System.out.println(play);
             System.out.print("Higher or Lower? (H/L): ");
             String input = console.next();
@@ -37,7 +37,6 @@ public class Main {
                         c = "Y";
                         score++;
                         System.out.println("Nice!\r\nScore: " + score + "\r\n");
-                        play = deck.cards[r];
                     } else {
                         //If wrong
                         c = "";
@@ -78,6 +77,7 @@ public class Main {
                         }
                     }
                 }
+                play = deck.cards[r];
             }
         }
         System.out.println("Thanks for playing!");
