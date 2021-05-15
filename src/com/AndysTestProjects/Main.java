@@ -7,20 +7,17 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Deck deck = new Deck();
         Scanner console = new Scanner(System.in);
-        String c = "";
+        String c = "Y";
         int score = 0;
         Card prev = new Card(0, 0);
-        boolean gotRight = true;
 
         System.out.println("Welcome to Andy's Higher or Lower!");
         System.out.println("Press any key to shuffle");
         System.in.read();
         deck.shuffle();
-        int r = (int) (Math.random() * (deck.cards.length));
-        prev = deck.cards[r];
-        //System.out.println(deck.cards[0]);
-        do {
-            while (gotRight = true) {
+        while (c.equalsIgnoreCase("Y")) {
+            int r = (int) (Math.random() * (deck.cards.length));
+            prev = deck.cards[r];
                 c = "";
                 r = (int) (Math.random() * (deck.cards.length));
                 System.out.println(prev);
@@ -29,17 +26,17 @@ public class Main {
                 System.out.println("Drawn: " + deck.cards[r]);
                 if (!input.equalsIgnoreCase("H") && !input.equalsIgnoreCase("L")) {
                     System.out.println("Booo game over, do as I say.");
-                    gotRight = false;
+                    c = "Y";
                 } else {
                     int value = deck.cards[r].higherOrLower(prev);
                     if (input.equalsIgnoreCase("H")) {
                         System.out.println("You guessed: Higher");
                         if (value >= 0) {
-                            gotRight = true;
+                            c = "Y";
                             score++;
                             System.out.println("Nice!\r\nScore: " + score + "\r\n");
                         } else {
-                            gotRight = false;
+                            c = "N";
                             score = 0;
                             System.out.println("\r\nToo Bad!\r\n");
                         }
@@ -47,30 +44,26 @@ public class Main {
                     } else if (input.equalsIgnoreCase("L")) {
                         System.out.println("You guessed: Lower");
                         if (value <= 0) {
-                            gotRight = true;
+                            c = "Y";
                             score++;
                             System.out.println("Nice!\r\nScore: " + score + "\r\n");
 
                         } else {
-                            gotRight = false;
+                            c = "";
                             score = 0;
                             System.out.println("\r\nToo Bad!\r\n");
                             while (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
                                 System.out.print("Try again? (Y/N): ");
                                 c = console.next();
-                            if (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
-                            System.out.println("Enter Y or N!");
-                            c = "";
-                            } else if (c.equalsIgnoreCase("N")) {
-                                c = "N";
-                            } else {
-                                c = "Y";
-                            }
+                                if (!c.equalsIgnoreCase("Y") && !c.equalsIgnoreCase("N")) {
+                                    System.out.println("Enter Y or N!");
+                                    c = "";
+                                }
                             }
                         }
-                    } prev = deck.cards[r];
+                        prev = deck.cards[r];
+                    }
                 }
             }
-        } while (c.equalsIgnoreCase("Y")) ;
+        }
     }
-}
