@@ -1,8 +1,8 @@
 package com.AndysTestProjects;
 
 public class Card {
-    private int rank;
-    private int suit;
+    private final int rank;
+    private final int suit;
 
     public Card(int rank, int suit) {
         this.rank = rank;
@@ -20,7 +20,7 @@ public class Card {
 
     public String toString() {
         String s;
-        if (SUITS[this.suit] == "Clubs" || SUITS[this.suit] == "Spades") {
+        if (SUITS[this.suit].equals("Clubs") || SUITS[this.suit].equals("Spades")) {
             s = "\033[47m\033[30m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
         } else {
             s = "\033[91m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
@@ -35,22 +35,10 @@ public class Card {
         if (this.suit > that.suit) {
             return 1;
         }
-        if (this.rank < that.rank) {
-            return -1;
-        }
-        if (this.rank > that.rank) {
-            return 1;
-        }
-        return 0;
+        return Integer.compare(this.rank, that.rank);
     }
 
     public int higherOrLower(Card that) {
-        if (this.rank < that.rank) {
-            return -1;
-        }
-        if (this.rank > that.rank) {
-            return 1;
-        }
-        return 0;
+        return Integer.compare(this.rank, that.rank);
     }
 }
