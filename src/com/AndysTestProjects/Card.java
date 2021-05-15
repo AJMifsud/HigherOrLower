@@ -21,13 +21,13 @@ public class Card {
     public String toString() {
         String s;
         if (SUITS[this.suit].equals("Clubs") || SUITS[this.suit].equals("Spades")) {
-            s = "\033[47m\033[30m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
+            s = "\033[30m\033[107m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
         } else {
-            s = "\033[91m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
+            s = "\033[31m\033[107m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
         }
         return s;
     }
-
+/*
     public int compareTo(Card that) {
         if (this.suit < that.suit) {
             return -1;
@@ -37,7 +37,7 @@ public class Card {
         }
         return Integer.compare(this.rank, that.rank);
     }
-
+*/
     public int higherOrLower(Card that) {
         return Integer.compare(this.rank, that.rank);
     }
