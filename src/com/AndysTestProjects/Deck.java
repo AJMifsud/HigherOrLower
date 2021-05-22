@@ -24,8 +24,8 @@ public class Deck {
     }
 
     public void print() {
-        for (int i = 0; i < this.cards.length; i++) {
-            System.out.println(this.cards[i]);
+        for (Card card : this.cards) {
+            System.out.println(card);
         }
     }
 }

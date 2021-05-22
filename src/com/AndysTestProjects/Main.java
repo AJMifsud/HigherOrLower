@@ -1,10 +1,13 @@
 package com.AndysTestProjects;
+import javax.swing.*;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        JFrame frame = new higherLowerGUI("Higher or Lower");
+        frame.setVisible(true);
         Deck deck = new Deck();
         Scanner console = new Scanner(System.in);
         String c = "Y";
