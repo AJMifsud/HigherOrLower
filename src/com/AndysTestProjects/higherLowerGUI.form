@@ -19,14 +19,14 @@
           <text value="Higher or Lower"/>
         </properties>
       </component>
-      <component id="366d" class="javax.swing.JButton" binding="shuffleButton" default-binding="true">
+      <component id="366d" class="javax.swing.JButton" binding="newGameButton">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="123" height="30"/>
           </grid>
         </constraints>
         <properties>
-          <text value="Shuffle"/>
+          <text value="New Game"/>
         </properties>
       </component>
       <component id="950f3" class="javax.swing.JButton" binding="exitButton" default-binding="true">

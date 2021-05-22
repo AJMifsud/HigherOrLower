@@ -23,9 +23,9 @@ public class Deck {
         System.out.println("\r\nSHUFFLING...\r\n");
     }
 
-    public void print() {
+    /*public void print() {
         for (Card card : this.cards) {
             System.out.println(card);
         }
-    }
+    }*/
 }

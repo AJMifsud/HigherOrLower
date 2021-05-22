@@ -3,11 +3,13 @@ package com.AndysTestProjects;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class higherLowerGUI extends JFrame {
     private JPanel mainPanel;
-    private JButton shuffleButton;
+    private JButton newGameButton;
     private JButton exitButton;
+    Deck deck = new Deck();
 
     public higherLowerGUI(String title) {
         super(title);
@@ -19,6 +21,16 @@ public class higherLowerGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
+            }
+        });
+        newGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Game game = new Game();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
     }
