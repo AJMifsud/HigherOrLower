@@ -21,9 +21,9 @@ public class Card {
     public String toString() {
         String s;
         if (SUITS[this.suit].equals("Clubs") || SUITS[this.suit].equals("Spades")) {
-            s = "\033[30m\033[107m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
+            s = RANKS[this.rank] + " of " + SUITS[this.suit];
         } else {
-            s = "\033[31m\033[107m" + RANKS[this.rank] + " of " + SUITS[this.suit] + "\033[0m";
+            s = RANKS[this.rank] + " of " + SUITS[this.suit];
         }
         return s;
     }

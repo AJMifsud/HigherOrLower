@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.AndysTestProjects.higherLowerGUI">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="30" left="30" bottom="30" right="30"/>
     <constraints>
-      <xy x="20" y="20" width="553" height="400"/>
+      <xy x="20" y="20" width="833" height="400"/>
     </constraints>
     <properties>
       <preferredSize width="600" height="400"/>
@@ -12,40 +12,127 @@
     <children>
       <component id="17094" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Copperplate Gothic Light" size="48"/>
           <text value="Higher or Lower"/>
         </properties>
       </component>
-      <component id="366d" class="javax.swing.JButton" binding="newGameButton">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="123" height="30"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="New Game"/>
-        </properties>
-      </component>
       <component id="950f3" class="javax.swing.JButton" binding="exitButton" default-binding="true">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="22" height="30"/>
+          <grid row="2" column="5" row-span="4" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="80" height="30"/>
           </grid>
         </constraints>
         <properties>
           <text value="Exit"/>
         </properties>
       </component>
-      <hspacer id="1a594">
+      <component id="366d" class="javax.swing.JButton" binding="newGameButton">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="248" height="11"/>
+          <grid row="2" column="1" row-span="4" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="145" height="30"/>
           </grid>
         </constraints>
-      </hspacer>
+        <properties>
+          <text value="New Game"/>
+        </properties>
+      </component>
+      <vspacer id="3c10">
+        <constraints>
+          <grid row="2" column="6" row-span="4" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="9a8d8">
+        <constraints>
+          <grid row="2" column="0" row-span="4" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="d398d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Your Card:"/>
+        </properties>
+      </component>
+      <component id="4c335" class="javax.swing.JLabel" binding="drawnCardLabel">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Drawn Card"/>
+        </properties>
+      </component>
+      <component id="143ba" class="javax.swing.JLabel" binding="playCardLabel">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Play Card"/>
+        </properties>
+      </component>
+      <component id="b8db1" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Drawn Card:"/>
+        </properties>
+      </component>
+      <component id="8c610" class="javax.swing.JLabel" binding="scoreLabel">
+        <constraints>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="28" height="26"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="*score*"/>
+        </properties>
+      </component>
+      <component id="24c28" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="32" height="26"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Score:"/>
+        </properties>
+      </component>
+      <component id="db2b5" class="javax.swing.JButton" binding="higherButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Higher"/>
+        </properties>
+      </component>
+      <component id="5a69b" class="javax.swing.JButton" binding="lowerButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Lower"/>
+        </properties>
+      </component>
+      <component id="b7892" class="javax.swing.JLabel" binding="resultLabel">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="_____________"/>
+        </properties>
+      </component>
+      <component id="25db2" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Remember: Aces high!"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

@@ -22,6 +22,11 @@ public class Deck {
         }
         System.out.println("\r\nSHUFFLING...\r\n");
     }
+    public Card drawCard(){
+        int r = (int) (Math.random() * (this.cards.length));
+        Card drawnCard = this.cards[r];
+        return drawnCard;
+    }
 
     /*public void print() {
         for (Card card : this.cards) {
