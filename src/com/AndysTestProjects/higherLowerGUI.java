@@ -23,16 +23,13 @@ public class higherLowerGUI extends JFrame {
         Game game = new Game();
         higherButton.setEnabled(false);
         lowerButton.setEnabled(false);
-        exitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+
         newGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                game.deck.shuffle();
+                game.score = 0;
+                game.play = game.deck.drawCard();
+                game.drawn = game.deck.drawCard();
                 scoreLabel.setText(String.valueOf(game.score));
                 playCardLabel.setText(game.play.toString());
                 drawnCardLabel.setText("");
@@ -40,6 +37,7 @@ public class higherLowerGUI extends JFrame {
                 lowerButton.setEnabled(true);
             }
         });
+
         higherButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,13 +49,13 @@ public class higherLowerGUI extends JFrame {
                     game.drawn = game.deck.drawCard();
                     playCardLabel.setText(game.play.toString());
                 } else {
-                    game.score = 0;
                     scoreLabel.setText(String.valueOf(game.score));
                     higherButton.setEnabled(false);
                     lowerButton.setEnabled(false);
                 }
             }
         });
+
         lowerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,11 +67,16 @@ public class higherLowerGUI extends JFrame {
                     game.drawn = game.deck.drawCard();
                     playCardLabel.setText(game.play.toString());
                 } else {
-                    game.score = 0;
                     scoreLabel.setText(String.valueOf(game.score));
                     higherButton.setEnabled(false);
                     lowerButton.setEnabled(false);
                 }
+            }
+        });
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
     }
