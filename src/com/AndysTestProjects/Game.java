@@ -4,6 +4,8 @@ public class Game {
     Deck deck;
     int score;
     Card play, drawn;
+    int hiScore = 0;
+
 
     public Game() {
         deck = new Deck();

@@ -14,6 +14,7 @@ public class higherLowerGUI extends JFrame {
     private JLabel playCardLabel;
     private JLabel drawnCardLabel;
     private JLabel resultLabel;
+    private JLabel hiScoreLabel;
 
     public higherLowerGUI(String title) {
         super(title);
@@ -23,6 +24,7 @@ public class higherLowerGUI extends JFrame {
         Game game = new Game();
         higherButton.setEnabled(false);
         lowerButton.setEnabled(false);
+        hiScoreLabel.setText(String.valueOf(game.hiScore));
 
         newGameButton.addActionListener(new ActionListener() {
             @Override
@@ -56,6 +58,10 @@ public class higherLowerGUI extends JFrame {
                     lowerButton.setEnabled(false);
                     resultLabel.setText("Game Over!");
                 }
+                if (game.score > game.hiScore) {
+                    game.hiScore = game.score;
+                }
+                hiScoreLabel.setText(String.valueOf(game.hiScore));
             }
         });
 
@@ -76,6 +82,10 @@ public class higherLowerGUI extends JFrame {
                     lowerButton.setEnabled(false);
                     resultLabel.setText("Game Over!");
                 }
+                if (game.score > game.hiScore) {
+                    game.hiScore = game.score;
+                }
+                hiScoreLabel.setText(String.valueOf(game.hiScore));
             }
         });
         exitButton.addActionListener(new ActionListener() {
