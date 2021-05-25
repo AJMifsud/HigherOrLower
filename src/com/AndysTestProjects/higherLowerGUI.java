@@ -35,6 +35,7 @@ public class higherLowerGUI extends JFrame {
                 drawnCardLabel.setText("");
                 higherButton.setEnabled(true);
                 lowerButton.setEnabled(true);
+                resultLabel.setText("");
             }
         });
 
@@ -45,6 +46,7 @@ public class higherLowerGUI extends JFrame {
                 if (game.higherGuess() == true){
                     game.score++;
                     scoreLabel.setText(String.valueOf(game.score));
+                    resultLabel.setText("Nice!");
                     game.play = game.drawn;
                     game.drawn = game.deck.drawCard();
                     playCardLabel.setText(game.play.toString());
@@ -52,6 +54,7 @@ public class higherLowerGUI extends JFrame {
                     scoreLabel.setText(String.valueOf(game.score));
                     higherButton.setEnabled(false);
                     lowerButton.setEnabled(false);
+                    resultLabel.setText("Game Over!");
                 }
             }
         });
@@ -63,6 +66,7 @@ public class higherLowerGUI extends JFrame {
                 if (game.lowerGuess() == true){
                     game.score++;
                     scoreLabel.setText(String.valueOf(game.score));
+                    resultLabel.setText("Nice!");
                     game.play = game.drawn;
                     game.drawn = game.deck.drawCard();
                     playCardLabel.setText(game.play.toString());
@@ -70,6 +74,7 @@ public class higherLowerGUI extends JFrame {
                     scoreLabel.setText(String.valueOf(game.score));
                     higherButton.setEnabled(false);
                     lowerButton.setEnabled(false);
+                    resultLabel.setText("Game Over!");
                 }
             }
         });
